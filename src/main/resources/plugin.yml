@@ -8,7 +8,7 @@ description: Switch between Admin and Member
 commands:
   switch:
     description: Change between admin mode and user mode.
-    usage: Syntax error! Simply type /switch to change modes.
+    usage: Syntax error! /switch と打ち込むだけでモード変更が可能です。
 
 permissions:
   aziswitch.*:
