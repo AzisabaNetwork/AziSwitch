@@ -1,0 +1,45 @@
+name: AziSwitch
+version: @version@
+main: com.github.mori01231.aziswitch.AziSwitch
+author: Mori01231
+description: Switch between Admin and Member
+
+
+commands:
+  switch:
+    description: Change between admin mode and user mode.
+    usage: Syntax error! Simply type /switch to change modes.
+
+permissions:
+  aziswitch.*:
+    description: Gives access to all LifeCore commands
+  aziswitch.ismoderator:
+    description: Indicated user is moderator.
+    default: false
+  aziswitch.isadmin:
+    description: Indicated user is admin.
+    default: false
+  aziswitch.isadminmember:
+    description: Indicated user is adminmember.
+    default: false
+  aziswitch.isdeveloper:
+    description: Indicated user is developer.
+    default: false
+  aziswitch.isowner:
+    description: Indicated user is owner.
+    default: false
+  aziswitch.switchmoderator:
+    description: Indicated user can switch to moderator.
+    default: false
+  aziswitch.switchadmin:
+    description: Indicated user can switch to admin.
+    default: false
+  aziswitch.switchadminmember:
+    description: Indicated user can switch to adminmember.
+    default: false
+  aziswitch.switchdeveloper:
+    description: Indicated user can switch to developer.
+    default: false
+  aziswitch.switchowner:
+    description: Indicated user can switch to owner.
+    default: false
