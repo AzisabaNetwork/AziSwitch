@@ -16,8 +16,8 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
         String servername = AziSwitch.getInstance().getConfig().getString("lp-server-name");
 
-
         if (sender instanceof Player){
+
             Player player = (Player) sender;
 
             //NO PERMISSION
@@ -129,6 +129,7 @@ public class SwitchCommandExecutor implements CommandExecutor {
         else{
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3このコマンドはコンソールから使用できません。" ));
         }
+
 
         return true;
     }
