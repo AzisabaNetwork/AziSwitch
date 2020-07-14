@@ -27,6 +27,7 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
                 sender.sendMessage(ChatColor.translateAlternateColorCodes
                         ('&',"&4権限不足です。\n&3Mori01231#9559のDMにこのメッセージのスクショをもって泣きつきましょう！" ));
+                return true;
             }
 
 
