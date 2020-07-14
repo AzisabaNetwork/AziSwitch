@@ -33,6 +33,14 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
             //CHANGE TO ADMIN MODE
 
+            //member to builder
+            if (sender.hasPermission("aziswitch.switchbuilder") && !sender.hasPermission("aziswitch.isbuilder")){
+
+                getServer().dispatchCommand(getServer().getConsoleSender(), "lp u " + player.getName() + " parent add builder server=" + servername);
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3Builderモードになりました。" ));
+                getServer().dispatchCommand(getServer().getConsoleSender(), "lp u " + player.getName() + " parent remove switchbuilder server=" + servername);
+            }
+
             //member to moderator
             if (sender.hasPermission("aziswitch.switchmoderator") && !sender.hasPermission("aziswitch.ismoderator")){
 
@@ -79,6 +87,14 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
             //CHANGE TO MEMBER MODE
 
+            //builder to member
+            if (sender.hasPermission("aziswitch.isbuilder")){
+
+                getServer().dispatchCommand(getServer().getConsoleSender(), "lp u " + player.getName() + " parent add switchbuilder server=" + servername);
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3Memberモードになりました。" ));
+                getServer().dispatchCommand(getServer().getConsoleSender(), "lp u " + player.getName() + " parent remove builder server=" + servername);
+
+            }
 
             //moderator to member
             if (sender.hasPermission("aziswitch.ismoderator")){
