@@ -153,4 +153,8 @@ public class SwitchCommandExecutor implements CommandExecutor {
     public void SwitchFromMember(Player player, String group){
 
     }
+
+    public void SwitchToMember(Player player, String group){
+
+    }
 }
