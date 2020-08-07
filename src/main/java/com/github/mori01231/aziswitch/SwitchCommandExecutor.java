@@ -147,7 +147,10 @@ public class SwitchCommandExecutor implements CommandExecutor {
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3このコマンドはコンソールから使用できません。" ));
         }
 
-
         return true;
+    }
+
+    public void SwitchFromMember(Player player, String group){
+
     }
 }
