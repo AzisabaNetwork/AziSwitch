@@ -157,4 +157,8 @@ public class SwitchCommandExecutor implements CommandExecutor {
     public void SwitchToMember(Player player, String group){
 
     }
+
+    public void sendCommand(String command){
+        getServer().dispatchCommand(getServer().getConsoleSender(), command);
+    }
 }
