@@ -161,4 +161,8 @@ public class SwitchCommandExecutor implements CommandExecutor {
     public void sendCommand(String command){
         getServer().dispatchCommand(getServer().getConsoleSender(), command);
     }
+
+    public void sendPlayerMessage(Player player, String message){
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&',message ));
+    }
 }
