@@ -11,10 +11,12 @@ import org.bukkit.entity.Player;
 import static org.bukkit.Bukkit.getServer;
 
 public class SwitchCommandExecutor implements CommandExecutor {
+
+    private String servername = AziSwitch.getInstance().getConfig().getString("lp-server-name");
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        String servername = AziSwitch.getInstance().getConfig().getString("lp-server-name");
 
         if (sender instanceof Player){
 
@@ -152,7 +154,6 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
     public void SwitchFromMember(Player player, String group){
         if (player.hasPermission("aziswitch.switch" + group) && !player.hasPermission("aziswitch.is" + group)){
-
             sendCommand("lp u " + player.getName() + " parent add " + group);
             sendPlayerMessage(player, "&3" + group + "モードになりました。");
             sendCommand("lp u " + player.getName() + " parent remove switch" + group);
@@ -161,12 +162,13 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
     public void SwitchToMember(Player player, String group){
         if (player.hasPermission("aziswitch.is" + group)){
-
             sendCommand("lp u " + player.getName() + " parent add switch" + group);
             sendPlayerMessage(player, "&3Memberモードになりました。");
             sendCommand("lp u " + player.getName() + " parent remove " + group);
         }
     }
+
+
 
     public void sendCommand(String command){
         getServer().dispatchCommand(getServer().getConsoleSender(), command);
