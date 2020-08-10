@@ -12,7 +12,7 @@ import static org.bukkit.Bukkit.getServer;
 
 public class SwitchCommandExecutor implements CommandExecutor {
 
-    private String servername = AziSwitch.getInstance().getConfig().getString("lp-server-name");
+    private final String servername = AziSwitch.getInstance().getConfig().getString("lp-server-name");
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
