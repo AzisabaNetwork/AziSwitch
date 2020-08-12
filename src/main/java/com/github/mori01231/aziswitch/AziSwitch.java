@@ -1,7 +1,5 @@
 package com.github.mori01231.aziswitch;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AziSwitch extends JavaPlugin {
