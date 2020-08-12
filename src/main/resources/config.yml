@@ -2,4 +2,12 @@
 
 lp-server-name: Life
 
+SingleServerGroups:
+  - admin
+  - moderator
+  - builder
 
+AllServerGroups:
+  - owner
+  - developer
+  - alladmin
