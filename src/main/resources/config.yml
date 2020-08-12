@@ -1,12 +1,16 @@
-#AziSwitch plugin configuration file
+# AziSwitch plugin configuration file
+# アジ鯖での使用を想定して作られた運営用の権限切り替えプラグイン。LuckPermsとバンジーが前提です。
 
+# LuckPerms上での鯖名
 lp-server-name: Life
 
+# 一つのサーバーでのみ付与されるグループ
 SingleServerGroups:
   - admin
   - moderator
   - builder
 
+# バンジーでネットワーク内のすべてのサーバーで付与されるグループ
 AllServerGroups:
   - owner
   - developer
