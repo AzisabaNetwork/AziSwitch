@@ -12,7 +12,7 @@ commands:
 
 permissions:
   aziswitch.*:
-    description: Gives access to all LifeCore commands
+    description: Gives access to all Aziswitch commands
   aziswitch.ismoderator:
     description: Indicated user is moderator.
     default: false
