@@ -8,11 +8,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
+import java.util.List;
+
 import static org.bukkit.Bukkit.getServer;
 
 public class SwitchCommandExecutor implements CommandExecutor {
 
     private final String servername = AziSwitch.getInstance().getConfig().getString("lp-server-name");
+    private final List singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
+    private final List allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
