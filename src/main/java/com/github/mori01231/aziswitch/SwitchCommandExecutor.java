@@ -15,17 +15,42 @@ import static org.bukkit.Bukkit.getServer;
 public class SwitchCommandExecutor implements CommandExecutor {
 
     private final String servername = AziSwitch.getInstance().getConfig().getString("lp-server-name");
-    private final List singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
-    private final List allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
+    private final List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
+    private final List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
+    private List<String> allGroups;
+
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        allGroups.addAll(allServerGroups);
+        allGroups.addAll(singleServerGroups);
+        Boolean hasGroup = false;
+
+        for (Object group : allGroups) {
+            if (sender.hasPermission("aziswitch.switch" + group)){
+                hasGroup = true;
+            }
+            if (sender.hasPermission("aziswitch.is" + group)){
+                hasGroup = true;
+            }
+        }
+
+        if(!hasGroup){
+            sender.sendMessage(ChatColor.translateAlternateColorCodes
+                    ('&',"&4権限不足です。\n&3Mori01231#9559のDMにこのメッセージのスクショをもって泣きつきましょう！" ));
+            return true;
+        }
+
+        if (sender instanceof Player) {
+            Player player = (Player) sender;
+        }
 
         if (sender instanceof Player){
 
             Player player = (Player) sender;
 
+            /*
             //NO PERMISSION
 
             if(!(sender.hasPermission("aziswitch.switchmoderator") || sender.hasPermission("aziswitch.switchadminmember")|| sender.hasPermission("aziswitch.switchadmin") || sender.hasPermission("aziswitch.switchdeveloper") || sender.hasPermission("aziswitch.switchowner")
@@ -35,7 +60,7 @@ public class SwitchCommandExecutor implements CommandExecutor {
                         ('&',"&4権限不足です。\n&3Mori01231#9559のDMにこのメッセージのスクショをもって泣きつきましょう！" ));
                 return true;
             }
-
+            */
 
             //CHANGE TO ADMIN MODE
 
