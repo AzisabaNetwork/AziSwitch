@@ -29,5 +29,6 @@ dependencies {
 processResources {
     from(sourceSets.main.resources.srcDirs) {
         filter ReplaceTokens, tokens: [version: version]
+        filteringCharset = 'UTF-8'
     }
 }
