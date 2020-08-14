@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.bukkit.Bukkit.getServer;
@@ -17,12 +18,13 @@ public class SwitchCommandExecutor implements CommandExecutor {
     private final String servername = AziSwitch.getInstance().getConfig().getString("lp-server-name");
     private final List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
     private final List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
-    private List<String> allGroups;
+
 
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        List<String> allGroups = new ArrayList<>();
         allGroups.addAll(allServerGroups);
         allGroups.addAll(singleServerGroups);
         Boolean hasGroup = false;
@@ -41,11 +43,11 @@ public class SwitchCommandExecutor implements CommandExecutor {
                     ('&',"&4権限不足です。\n&3Mori01231#9559のDMにこのメッセージのスクショをもって泣きつきましょう！" ));
             return true;
         }
-
+/*
         if (sender instanceof Player) {
             Player player = (Player) sender;
         }
-
+*/
         if (sender instanceof Player){
 
             Player player = (Player) sender;
