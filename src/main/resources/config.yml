@@ -7,6 +7,7 @@ lp-server-name: Life
 # 一つのサーバーでのみ付与されるグループ
 SingleServerGroups:
   - admin
+  - adminmember
   - moderator
   - builder
 
