@@ -52,18 +52,6 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
             Player player = (Player) sender;
 
-            /*
-            //NO PERMISSION
-
-            if(!(sender.hasPermission("aziswitch.switchmoderator") || sender.hasPermission("aziswitch.switchadminmember")|| sender.hasPermission("aziswitch.switchadmin") || sender.hasPermission("aziswitch.switchdeveloper") || sender.hasPermission("aziswitch.switchowner")
-                    || sender.hasPermission("aziswitch.ismoderator") || sender.hasPermission("aziswitch.isadminmember") || sender.hasPermission("aziswitch.isadmin") || sender.hasPermission("aziswitch.isdeveloper") || sender.hasPermission("aziswitch.isowner"))){
-
-                sender.sendMessage(ChatColor.translateAlternateColorCodes
-                        ('&',"&4権限不足です。\n&3Mori01231#9559のDMにこのメッセージのスクショをもって泣きつきましょう！" ));
-                return true;
-            }
-            */
-
             //CHANGE TO ADMIN MODE
 
             //member to builder
