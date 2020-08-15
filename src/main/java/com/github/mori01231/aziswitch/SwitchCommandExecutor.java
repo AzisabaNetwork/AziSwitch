@@ -29,7 +29,7 @@ public class SwitchCommandExecutor implements CommandExecutor {
         allGroups.addAll(singleServerGroups);
         Boolean hasGroup = false;
 
-        for (Object group : allGroups) {
+        for (String group : allGroups) {
             if (sender.hasPermission("aziswitch.switch" + group)){
                 hasGroup = true;
             }
@@ -54,6 +54,15 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
             //CHANGE TO ADMIN MODE
 
+            for (String group : singleServerGroups) {
+                SwitchFromMemberInServer(player, group);
+            }
+
+            for (String group : allServerGroups) {
+                SwitchFromMember(player, group);
+            }
+
+/*
             //member to builder
             if (sender.hasPermission("aziswitch.switchbuilder") && !sender.hasPermission("aziswitch.isbuilder")){
 
@@ -102,7 +111,7 @@ public class SwitchCommandExecutor implements CommandExecutor {
                 getServer().dispatchCommand(getServer().getConsoleSender(), "lp u " + player.getName() + " parent remove switchowner");
 
             }
-
+*/
 
 
 
@@ -170,6 +179,7 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
         return true;
     }
+
 
     public void SwitchFromMember(Player player, String group){
         if (player.hasPermission("aziswitch.switch" + group) && !player.hasPermission("aziswitch.is" + group)){
