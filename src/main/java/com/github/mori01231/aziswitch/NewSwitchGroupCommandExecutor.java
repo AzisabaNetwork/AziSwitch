@@ -38,12 +38,15 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
 
         // Make a group a switch group for a single server.
         if(creationMode.equalsIgnoreCase("single")){
-            // Get the current list of groups for a single server
+            // Add the group to the list of single server groups in config.
             List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
             singleServerGroups.add(groupName);
             AziSwitch.getInstance().getConfig().set("SingleServerGroups", singleServerGroups);
         }
+
+        // Make a group a switch group for a all servers.
         else{
+            // Add the group to the list of all server groups in config.
             List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
             allServerGroups.add(groupName);
             AziSwitch.getInstance().getConfig().set("AllServerGroups", allServerGroups);
