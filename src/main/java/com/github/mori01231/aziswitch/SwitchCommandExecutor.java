@@ -19,16 +19,29 @@ public class SwitchCommandExecutor implements CommandExecutor {
     private final List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
     private final List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
 
-
+    private Player player;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+
+        // Check if the sender is a player
+        if (sender instanceof Player){
+            player = (Player) sender;
+        }
+        else{
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3このコマンドはコンソールから使用できません。" ));
+            return true;
+        }
+
+        // Prepare a list with all groups
         List<String> allGroups = new ArrayList<>();
         allGroups.addAll(allServerGroups);
         allGroups.addAll(singleServerGroups);
+        // Initialize boolean to check if a player has a switchable group
         Boolean hasGroup = false;
 
+        // Build a list with all groups
         for (String group : allGroups) {
             if (sender.hasPermission("aziswitch.switch" + group)){
                 hasGroup = true;
@@ -38,32 +51,28 @@ public class SwitchCommandExecutor implements CommandExecutor {
             }
         }
 
+        // Check if player has a switchable group
         if(!hasGroup){
             sender.sendMessage(ChatColor.translateAlternateColorCodes
                     ('&',"&4権限不足です。\n&3Mori01231#9559のDMにこのメッセージのスクショをもって泣きつきましょう！" ));
-            return true;
+            return true; // Don't have the permissions? Sucks for you.
         }
 
-        if (sender instanceof Player){
-            Player player = (Player) sender;
+        // Call all functions to switch groups
+        for (String group : singleServerGroups) {
+            SwitchFromMemberInServer(player, group);
+        }
+        for (String group : allServerGroups) {
+            SwitchFromMember(player, group);
+        }
+        for (String group : singleServerGroups) {
+            SwitchToMemberInServer(player, group);
+        }
+        for (String group : allServerGroups) {
+            SwitchToMember(player, group);
+        }
 
-            for (String group : singleServerGroups) {
-                SwitchFromMemberInServer(player, group);
-            }
-            for (String group : allServerGroups) {
-                SwitchFromMember(player, group);
-            }
-            for (String group : singleServerGroups) {
-                SwitchToMemberInServer(player, group);
-            }
-            for (String group : allServerGroups) {
-                SwitchToMember(player, group);
-            }
-        }
-        else{
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3このコマンドはコンソールから使用できません。" ));
-        }
-        return true;
+        return true; // Correctly switched groups.
     }
 
 
