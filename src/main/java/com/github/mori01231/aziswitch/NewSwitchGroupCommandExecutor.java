@@ -1,5 +1,6 @@
 package com.github.mori01231.aziswitch;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,10 +15,10 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(args[0].equalsIgnoreCase("single")){
+        if(args[1].equalsIgnoreCase("single")){
             List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
         }
-        if(args[0].equalsIgnoreCase("all")){
+        else{
             List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
         }
 
