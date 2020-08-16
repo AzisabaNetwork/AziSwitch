@@ -15,7 +15,29 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(args[1].equalsIgnoreCase("single")){
+
+        // First argument is the group name.
+        String groupName = args[0];
+
+        // Initial variable to indicate mode.
+        String creationMode = "all";
+
+        if(args.length >= 2){
+            // Set creation mode to single if the second argument is "single"
+            if(args[1].equalsIgnoreCase("single")){
+                creationMode = "single";
+            }
+
+            // if the second argument is invalid, give an error and return
+            else if(!args[1].equalsIgnoreCase("all")){
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cモードはsingleもしくはallで設定してください。" ));
+                return true;
+            }
+        }
+
+        // Make a group a switch group for a single server.
+        if(creationMode.equalsIgnoreCase("single")){
+            // Get the current list of groups for a single server
             List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
         }
         else{
