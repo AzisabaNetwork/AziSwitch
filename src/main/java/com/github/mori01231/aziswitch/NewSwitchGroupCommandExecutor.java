@@ -60,8 +60,10 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
 
     public void createGroups(String groupName){
         sendCommand("lp creategroup " + groupName);
+        sendCommand("lp g " + groupName + " permission set aziswitch.* false");
         sendCommand("lp g " + groupName + " permission set aziswitch.is" + groupName + " true");
         sendCommand("lp creategroup switch" + groupName);
+        sendCommand("lp g switch" + groupName + " permission set aziswitch.* false");
         sendCommand("lp g switch" + groupName + " permission set aziswitch.switch" + groupName + " true");
     }
 
