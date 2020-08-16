@@ -43,38 +43,26 @@ public class SwitchCommandExecutor implements CommandExecutor {
                     ('&',"&4権限不足です。\n&3Mori01231#9559のDMにこのメッセージのスクショをもって泣きつきましょう！" ));
             return true;
         }
-/*
-        if (sender instanceof Player) {
-            Player player = (Player) sender;
-        }
-*/
+
         if (sender instanceof Player){
-
             Player player = (Player) sender;
-
-            //CHANGE TO ADMIN MODE
 
             for (String group : singleServerGroups) {
                 SwitchFromMemberInServer(player, group);
             }
-
             for (String group : allServerGroups) {
                 SwitchFromMember(player, group);
             }
-
             for (String group : singleServerGroups) {
                 SwitchToMemberInServer(player, group);
             }
-
             for (String group : allServerGroups) {
                 SwitchToMember(player, group);
             }
-
         }
         else{
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&3このコマンドはコンソールから使用できません。" ));
         }
-
         return true;
     }
 
