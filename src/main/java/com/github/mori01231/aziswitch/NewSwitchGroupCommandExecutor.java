@@ -41,10 +41,12 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
             // Get the current list of groups for a single server
             List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
             singleServerGroups.add(groupName);
+            AziSwitch.getInstance().getConfig().set("SingleServerGroups", singleServerGroups);
         }
         else{
             List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
             allServerGroups.add(groupName);
+            AziSwitch.getInstance().getConfig().set("AllServerGroups", allServerGroups);
         }
 
         return true;
