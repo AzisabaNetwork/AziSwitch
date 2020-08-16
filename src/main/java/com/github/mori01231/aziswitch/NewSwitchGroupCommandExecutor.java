@@ -51,7 +51,7 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
             sendCommand("lp g switch" + groupName + " permission set aziswitch.switch" + groupName + " true");
         }
 
-        // Make a group a switch group for a all servers.
+        // Make a group a switch group for all servers.
         else{
             // Add the group to the list of all server groups in config.
             List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
