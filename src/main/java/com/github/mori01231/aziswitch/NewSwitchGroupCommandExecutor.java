@@ -11,9 +11,6 @@ import static org.bukkit.Bukkit.getServer;
 
 public class NewSwitchGroupCommandExecutor implements CommandExecutor {
 
-    List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
-    List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
-
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
