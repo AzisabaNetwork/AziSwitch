@@ -7,6 +7,8 @@ import org.bukkit.command.CommandSender;
 
 import java.util.List;
 
+import static org.bukkit.Bukkit.getServer;
+
 public class NewSwitchGroupCommandExecutor implements CommandExecutor {
 
     List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
@@ -42,6 +44,8 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
             List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
             singleServerGroups.add(groupName);
             AziSwitch.getInstance().getConfig().set("SingleServerGroups", singleServerGroups);
+
+
         }
 
         // Make a group a switch group for a all servers.
@@ -50,8 +54,17 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
             List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
             allServerGroups.add(groupName);
             AziSwitch.getInstance().getConfig().set("AllServerGroups", allServerGroups);
+
+            sendCommand("lp creategroup " + groupName);
+            sendCommand("lp g " + groupName + " permission set aziswitch.is" + groupName + " true");
+            sendCommand("lp creategroup switch" + groupName);
+            sendCommand("lp g switch" + groupName + " permission set aziswitch.switch" + groupName + " true");
         }
 
         return true;
+    }
+
+    public void sendCommand(String command){
+        getServer().dispatchCommand(getServer().getConsoleSender(), command);
     }
 }
