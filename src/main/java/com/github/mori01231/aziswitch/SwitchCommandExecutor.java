@@ -199,7 +199,7 @@ public class SwitchCommandExecutor implements CommandExecutor {
 
     public void SwitchFromMemberInServer(Player player, String group){
         if (player.hasPermission("aziswitch.switch" + group) && !player.hasPermission("aziswitch.is" + group + " server=" + servername)){
-            sendCommand("lp u " + player.getName() + " parent add " + group);
+            sendCommand("lp u " + player.getName() + " parent add " + group + " server=" + servername);
             sendPlayerMessage(player, "&3" + group + "モードになりました。");
             sendCommand("lp u " + player.getName() + " parent remove switch" + group + " server=" + servername);
         }
