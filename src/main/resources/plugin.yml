@@ -8,9 +8,12 @@ prefix: AziSwitch
 
 commands:
   switch:
-    description: Change between admin mode and user mode.
-    usage: Syntax Error! Simply type /switch to change gamemodes.
+    description: 運営モードとサバ民モードを行き来する。
+    usage: エラー。/switchで運営モードを変更できます。
+  newswitchgroup:
+    description: Switch可能なグループを作成する。
+    usage: エラー。/newswitchgroup グループ名 でグループの作成が可能です。
 
 permissions:
   aziswitch.*:
-    description: Gives access to all Aziswitch commands
+    description: AziSwitchの全コマンドへのアクセスを可能にする。
