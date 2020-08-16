@@ -22,6 +22,7 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
         // Initial variable to indicate mode.
         String creationMode = "all";
 
+        // Determine mode
         if(args.length >= 2){
             // Set creation mode to single if the second argument is "single"
             if(args[1].equalsIgnoreCase("single")){
@@ -39,9 +40,11 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
         if(creationMode.equalsIgnoreCase("single")){
             // Get the current list of groups for a single server
             List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
+            singleServerGroups.add(groupName);
         }
         else{
             List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
+            allServerGroups.add(groupName);
         }
 
         return true;
