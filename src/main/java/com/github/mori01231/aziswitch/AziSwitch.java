@@ -20,6 +20,7 @@ public final class AziSwitch extends JavaPlugin {
         // Plugin startup logic
         getLogger().info("AziSwitch has been enabled.");
         this.getCommand("switch").setExecutor(new SwitchCommandExecutor());
+        this.getCommand("newswitchgroup").setExecutor(new NewSwitchGroupCommandExecutor());
 
         this.saveDefaultConfig();
 
