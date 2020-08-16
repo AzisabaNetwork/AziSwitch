@@ -62,6 +62,14 @@ public class SwitchCommandExecutor implements CommandExecutor {
                 SwitchFromMember(player, group);
             }
 
+            for (String group : singleServerGroups) {
+                SwitchToMemberInServer(player, group);
+            }
+
+            for (String group : allServerGroups) {
+                SwitchToMember(player, group);
+            }
+            /*
             //CHANGE TO MEMBER MODE
 
             //builder to member
@@ -117,7 +125,7 @@ public class SwitchCommandExecutor implements CommandExecutor {
                 getServer().dispatchCommand(getServer().getConsoleSender(), "lp u " + player.getName() + " parent remove owner");
 
             }
-
+            */
 
         }
         else{
