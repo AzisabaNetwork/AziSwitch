@@ -45,10 +45,7 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
             singleServerGroups.add(groupName);
             AziSwitch.getInstance().getConfig().set("SingleServerGroups", singleServerGroups);
 
-            sendCommand("lp creategroup " + groupName);
-            sendCommand("lp g " + groupName + " permission set aziswitch.is" + groupName + " true");
-            sendCommand("lp creategroup switch" + groupName);
-            sendCommand("lp g switch" + groupName + " permission set aziswitch.switch" + groupName + " true");
+            createGroups(groupName);
         }
 
         // Make a group a switch group for all servers.
@@ -58,13 +55,17 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
             allServerGroups.add(groupName);
             AziSwitch.getInstance().getConfig().set("AllServerGroups", allServerGroups);
 
-            sendCommand("lp creategroup " + groupName);
-            sendCommand("lp g " + groupName + " permission set aziswitch.is" + groupName + " true");
-            sendCommand("lp creategroup switch" + groupName);
-            sendCommand("lp g switch" + groupName + " permission set aziswitch.switch" + groupName + " true");
+            createGroups(groupName);
         }
 
         return true;
+    }
+
+    public void createGroups(String groupName){
+        sendCommand("lp creategroup " + groupName);
+        sendCommand("lp g " + groupName + " permission set aziswitch.is" + groupName + " true");
+        sendCommand("lp creategroup switch" + groupName);
+        sendCommand("lp g switch" + groupName + " permission set aziswitch.switch" + groupName + " true");
     }
 
     public void sendCommand(String command){
