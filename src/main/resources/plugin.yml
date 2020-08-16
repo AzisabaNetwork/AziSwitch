@@ -3,6 +3,7 @@ version: @version@
 main: com.github.mori01231.aziswitch.AziSwitch
 author: Mori01231
 description: Switch between Admin mode and Member mode
+prefix: AziSwitch
 
 
 commands:
