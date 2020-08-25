@@ -15,7 +15,7 @@ Switch between admin and member
 ３：Plugmanを利用してロードするか、サーバーを再起動する。\
 ４：生成されたAziSwitchフォルダ内にあるconfig.ymlでサーバー名をLuckPerms上でのサーバー名に変更する。\
 ５：config.ymlのLuckPermsのグループ名を必要に応じて編集する。\
-６：Plugmanを利用してリロードするか、サーバーを再起動する。\
+６：Plugmanを利用してリロードするか、サーバーを再起動する。
 
 # Contributors
 - [Mori01231](https://github.com/Mori01231)
