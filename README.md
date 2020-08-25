@@ -5,7 +5,7 @@ Switch between admin and member
 [![Github issues](https://img.shields.io/github/issues/AzisabaNetwork/AziSwitch)](https://github.com/AzisabaNetwork/AziSwitch/issues)
 [![Github forks](https://img.shields.io/github/forks/AzisabaNetwork/AziSwitch)](https://github.com/AzisabaNetwork/AziSwitch/network/members)
 [![Github stars](https://img.shields.io/github/stars/AzisabaNetwork/AziSwitch)](https://github.com/AzisabaNetwork/AziSwitch/stargazers)
-[![Github license](https://img.shields.io/github/license/AzisabaNetwork/AziSwitch)](https://github.com/AzisabaNetwork/AziSwitch/LICENSE)
+[![Github license](https://img.shields.io/github/license/AzisabaNetwork/AziSwitch)](https://github.com/AzisabaNetwork/AziSwitch/)
 
 # Installation
 前提プラグイン：LuckPerms
