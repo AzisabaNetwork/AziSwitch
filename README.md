@@ -17,5 +17,7 @@ Switch between admin and member
 ５：config.ymlのLuckPermsのグループ名を必要に応じて編集する。\
 ６：Plugmanを利用してリロードするか、サーバーを再起動する。
 
+# 使い方
+
 # Contributors
 - [Mori01231](https://github.com/Mori01231)
