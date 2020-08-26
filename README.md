@@ -19,5 +19,9 @@ Switch between admin and member
 
 # 使い方
 
+### 基本コマンド
+- /switch\
+運営権限と鯖民権限を切り替えることができます
+
 # Contributors
 - [Mori01231](https://github.com/Mori01231)
