@@ -21,7 +21,9 @@ Switch between admin and member
 
 ### 基本コマンド
 - /switch\
-運営権限と鯖民権限を切り替えることができます
+運営権限と鯖民権限を切り替えることができます。
+- /newswitchgroup グループ名\
+そのグループ名でLuckPermsのグループを作成したうえで鯖民モードとの切り替えができる初期設定をします。
 
 # Contributors
 - [Mori01231](https://github.com/Mori01231)
