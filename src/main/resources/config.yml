@@ -16,3 +16,6 @@ AllServerGroups:
   - owner
   - developer
   - alladmin
+
+# op状態でswitchを実行した人を保存(触るな)
+OPs:

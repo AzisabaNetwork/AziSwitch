@@ -10,7 +10,7 @@ import java.util.List;
 import static org.bukkit.Bukkit.getServer;
 
 public class NewSwitchGroupCommandExecutor implements CommandExecutor {
-
+    private final String pluginName =  AziSwitch.getInstance().getDescription().getPrefix();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -30,7 +30,7 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
 
             // if the second argument is invalid, give an error and return
             else if(!args[1].equalsIgnoreCase("all")){
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cモードはsingleもしくはallで設定してください。" ));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7[&b"+pluginName+"&7]&r &cモードはsingleもしくはallで設定してください。" ));
                 return true;
             }
         }
@@ -40,7 +40,7 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
             // Add the group to the list of single server groups in config.
             List<String> singleServerGroups = AziSwitch.getInstance().getConfig().getStringList("SingleServerGroups");
             singleServerGroups.add(groupName);
-            AziSwitch.getInstance().getConfig().set("SingleServerGroups", singleServerGroups);
+            configManager.setSingleServerGroups(singleServerGroups);
 
             createGroups(groupName);
         }
@@ -50,7 +50,7 @@ public class NewSwitchGroupCommandExecutor implements CommandExecutor {
             // Add the group to the list of all server groups in config.
             List<String> allServerGroups = AziSwitch.getInstance().getConfig().getStringList("AllServerGroups");
             allServerGroups.add(groupName);
-            AziSwitch.getInstance().getConfig().set("AllServerGroups", allServerGroups);
+            configManager.setAllServerGroups(allServerGroups);
 
             createGroups(groupName);
         }

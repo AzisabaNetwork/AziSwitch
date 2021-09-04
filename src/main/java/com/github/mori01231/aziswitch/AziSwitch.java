@@ -1,5 +1,6 @@
 package com.github.mori01231.aziswitch;
 
+import com.github.mori01231.aziswitch.configManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AziSwitch extends JavaPlugin {
@@ -19,11 +20,12 @@ public final class AziSwitch extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getLogger().info("AziSwitch has been enabled.");
+        this.saveDefaultConfig();
+        configManager.loadConfig();
+
         this.getCommand("switch").setExecutor(new SwitchCommandExecutor());
         this.getCommand("newswitchgroup").setExecutor(new NewSwitchGroupCommandExecutor());
-
-        this.saveDefaultConfig();
-
+        getServer().getPluginManager().registerEvents(new PlayerJoinEventListener(),this);
     }
 
 
