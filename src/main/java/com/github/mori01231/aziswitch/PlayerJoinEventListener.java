@@ -1,6 +1,5 @@
 package com.github.mori01231.aziswitch;
 
-import com.github.mori01231.aziswitch.configManager;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

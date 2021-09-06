@@ -1,6 +1,5 @@
 package com.github.mori01231.aziswitch;
 
-import com.github.mori01231.aziswitch.configManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AziSwitch extends JavaPlugin {
@@ -27,8 +26,6 @@ public final class AziSwitch extends JavaPlugin {
         this.getCommand("newswitchgroup").setExecutor(new NewSwitchGroupCommandExecutor());
         getServer().getPluginManager().registerEvents(new PlayerJoinEventListener(),this);
     }
-
-
 
     @Override
     public void onDisable() {

@@ -1,6 +1,5 @@
 package com.github.mori01231.aziswitch;
 
-import com.github.mori01231.aziswitch.configManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -117,7 +116,6 @@ public class SwitchCommandExecutor implements CommandExecutor {
         configManager.setOPs(OPs);
         player.setOp(true);
         sendPlayerMessage(player,"&4OP&3を&a付与&3しました。");
-        System.out.println(OPs);
     }
 
     private void removeOP(Player player){
@@ -128,7 +126,6 @@ public class SwitchCommandExecutor implements CommandExecutor {
         }
         player.setOp(false);
         sendPlayerMessage(player,"&4OP&3を&c削除&3しました。");
-        System.out.println(OPs);
     }
 
     public void sendCommand(String command){
