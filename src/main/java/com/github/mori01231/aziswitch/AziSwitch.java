@@ -33,6 +33,7 @@ public final class AziSwitch extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        this.saveConfig();
         getLogger().info("AziSwitch has been disabled.");
     }
 }
