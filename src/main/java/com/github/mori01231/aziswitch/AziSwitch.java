@@ -19,18 +19,17 @@ public final class AziSwitch extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getLogger().info("AziSwitch has been enabled.");
-        this.getCommand("switch").setExecutor(new SwitchCommandExecutor());
-        this.getCommand("newswitchgroup").setExecutor(new NewSwitchGroupCommandExecutor());
-
         this.saveDefaultConfig();
+        configManager.loadConfig();
 
+        this.getCommand("switch").setExecutor(new SwitchCommandExecutor());
+        getServer().getPluginManager().registerEvents(new PlayerJoinEventListener(),this);
     }
-
-
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        this.saveConfig();
         getLogger().info("AziSwitch has been disabled.");
     }
 }
