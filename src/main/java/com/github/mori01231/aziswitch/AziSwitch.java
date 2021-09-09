@@ -23,7 +23,6 @@ public final class AziSwitch extends JavaPlugin {
         configManager.loadConfig();
 
         this.getCommand("switch").setExecutor(new SwitchCommandExecutor());
-        this.getCommand("newswitchgroup").setExecutor(new NewSwitchGroupCommandExecutor());
         getServer().getPluginManager().registerEvents(new PlayerJoinEventListener(),this);
     }
 
