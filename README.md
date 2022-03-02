@@ -13,8 +13,8 @@ Switch between admin and member
 １：Releasesから最新のjarファイルをダウンロード\
 ２：サーバーのpluginsフォルダに入れる\
 ３：Plugmanを利用してロードするか、サーバーを再起動する。\
-４：生成されたAziSwitchフォルダ内にあるconfig.ymlでサーバー名をLuckPerms上でのサーバー名に変更する。\
-５：config.ymlのLuckPermsのグループ名を必要に応じて編集する。\
+４：生成されたAziSwitchフォルダ内にあるconfig.ymlでサーバー名`lp-server-name`をLuckPerms上でのサーバー名に変更する。\
+５：config.ymlのLuckPermsのグループ名を必要に応じて編集する。(基本デフォルト)\
 ６：Plugmanを利用してリロードするか、サーバーを再起動する。
 
 # 使い方
@@ -22,8 +22,7 @@ Switch between admin and member
 ### 基本コマンド
 - /switch\
 運営権限と鯖民権限を切り替えることができます。
-- /newswitchgroup グループ名\
-そのグループ名でLuckPermsのグループを作成したうえで鯖民モードとの切り替えができる初期設定をします。
 
 # Contributors
 - [Mori01231](https://github.com/Mori01231)
+- [huda0209](https://github.com/huda0209)
